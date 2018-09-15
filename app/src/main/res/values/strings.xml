@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RtmpClient</string>
+    <string name="hello_blank_fragment">helohelo fragment</string>
+    <string name="fragment_main_btn_publish">配信</string>
+    <string name="fragment_main_btn_play">視聴</string>
+    <string name="fragment_player_btn_reload">更新</string>
+    <string name="fragment_publisher_btn_start_publish">開始</string>
+    <string name="fragment_publisher_btn_stop_publish">停止</string>
+    <string name="fragment_publisher_caution_started">配信開始しました</string>
+    <string name="fragment_publisher_caution_stopped">配信停止しました</string>
+    <string name="fragment_publisher_caution_disconnected">切断しました</string>
+    <string name="fragment_publisher_caution_failed_to_connect">接続失敗しました</string>
+    <string name="title_activity_publisher">PublisherActivity</string>
+</resources>

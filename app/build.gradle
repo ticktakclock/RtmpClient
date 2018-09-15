@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    defaultConfig {
+        applicationId "com.github.ticktakclock.rtmpclient"
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:support-v4:$APP_COMPAT_VERSION"
+    implementation "com.android.support:appcompat-v7:$APP_COMPAT_VERSION"
+    implementation "com.android.support.constraint:constraint-layout:$CONSTRAINT_LAYOUT_VERSION"
+
+    // timber
+    // https://github.com/JakeWharton/timber
+    implementation "com.jakewharton.timber:timber:$TIMBER_VERSION"
+
+    // butterknife
+    // https://github.com/JakeWharton/butterknife
+    implementation "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
+    kapt "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
+
+    // rtmp client
+    // https://github.com/TakuSemba/RtmpPublisher
+    implementation "com.github.takusemba:rtmppublisher:$RTMP_PUBLISHER_VERSION"
+    implementation 'net.butterflytv.utils:rtmp-client:3.0.1'
+
+    // ExoPlayer
+    // https://github.com/google/ExoPlayer
+    implementation "com.google.android.exoplayer:exoplayer-core:$EXO_PLAYER_VERSION"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$EXO_PLAYER_VERSION"
+    implementation "com.google.android.exoplayer:extension-rtmp:$EXO_PLAYER_VERSION"
+
+    // rtmp client
+    // https://github.com/TakuSemba/RtmpPublisher
+    implementation "com.github.takusemba:rtmppublisher:$RTMP_PUBLISHER_VERSION"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
